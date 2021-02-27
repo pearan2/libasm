@@ -11,7 +11,11 @@
 # **************************************************************************** #
 
 SRCS	= ft_strlen.s \
-
+			ft_strcpy.s \
+			ft_strcmp.s \
+			ft_write.s \
+			ft_read.s \
+			ft_strdup.s
 OBJS	= ${SRCS:.s=.o}
 NAME	= libasm.a
 
@@ -32,5 +36,9 @@ fclean	:	clean
 		rm -f $(NAME)
 
 re		:	fclean all
+
+test	:	re
+			gcc main.c $(NAME)
+			./a.out
 
 .PHONY	:	all clean fclean re
